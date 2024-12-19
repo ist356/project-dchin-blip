@@ -22,4 +22,16 @@ Examples:
 **Best Reflection** "I learned when to use while vs for loops. While loops are for sentiel-controlled values (waiting for a condition to occur), vs for loops are for iterating over collections of fixed values."
 
 `--- Reflection Below This Line ---`
+I struggled with many things on this project:
 
+- First, I ran into the issue of python not recognizing the "code" folder as a module despite the __init__ file being clearly visible. I was stuck on this for a while, looking for alternative ways of importing and changing my file structure. Ultimately, I had to go back to Assignment 6 and borrow the sys.path.append strategy in order to solve this problem.
+
+- Secondly, I found out Playwright and Streamlit don't mix well together. The only solution I found was to use the async library (with help from the information in this post: https://discuss.streamlit.io/t/using-playwright-with-streamlit/28380/5).
+
+- I found Streamlit a little finicky to work with. Since it reran the file constantly, I would have problems with button actions triggering without a button press (solved with an if statement) and the ui not coming out exactly how I wanted it to.
+
+- The free tier of the Polygon.io API only allowed for a few calls per minute which made testing tough.
+
+- The response from Polygon.io came in the form of a dictionary of dictionaries. Initially, I tried using json_normalize() but that did not work and I had to resort to going through the dictionaries manually via their keys.
+
+I gained practical knowledge of how to use playwright, interact with an API, and make charts with streamlit. I also learned how to make use of pickle to save things from streamlit, which is important because I want to implement a note-taking feature in the future. Also in the future and if I had more time, I would try to make the project more resilient to errors (i.e. better error handling) and implement additional features like charts for the financial statement data and finer-grained metrics (e.g. earnings-per-share and sales-per-share) for individual days by combining the retrieval tools.
